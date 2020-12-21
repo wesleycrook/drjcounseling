@@ -1,0 +1,9 @@
+a.footer-link {
+  color: #fff !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+a.footer-link:hover {
+  color: #ffbc0a !important;
+}
