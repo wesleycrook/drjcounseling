@@ -858,64 +858,6 @@
 				$scope.find('.ekit-cehckbox-forcefully-checked').parents('.ekit-slide-toggle').find('input[type="checkbox"]').prop("checked", true);
 			}
 		},
-		Video_Gallery: function ($scope) {
-			var popup = $scope.find('.video-link.popup'),
-				inline = $scope.find('.video-link.inline'),
-				isotopeEl = $scope.find('.ekit-video-gallery-wrapper.ekit-masonry'),
-				filterEl = $scope.find('.elementskit-main-filter>li>a'),
-				carouselEl = $scope.find('.ekit-video-gallery.ekit-carousel'),
-				config = carouselEl.data('config');
-
-			if(popup.length > 0) {
-				popup.magnificPopup({
-					type: 'iframe',
-					mainClass: 'mfp-fade',
-					removalDelay: 160,
-					preloader: true,
-					fixedContentPos: false,
-					iframe: {
-						markup: '<div class="mfp-iframe-scaler">' +
-						'<div class="mfp-close"></div>' +
-						'<iframe class="mfp-iframe" frameborder="0" allow="autoplay"></iframe>' +
-						'</div>',
-						patterns: {
-							youtube: {
-								index: 'youtube.com/',
-								id: 'v=',
-								src: 'https://www.youtube.com/embed/%id%?autoplay=1&rel=0'
-							}
-						}
-					}
-				});
-			}
-
-			inline.on('click', function (e) {
-				e.preventDefault();
-				var url = $(this).data('url');
-				$(this).addClass('video-added').append('<iframe src="' + url + '" width="643" height="360" allow="autoplay" frameborder="0"></iframe>');
-			});
-
-			filterEl.on('click', function (e) {
-				e.preventDefault();
-				var slug = $(this).data('value') ? '.' + $(this).data('value') : '';
-				$scope.find('a').removeClass('selected');
-				$(this).addClass('selected');
-				$scope.find('.ekit-video-item').hide();
-				$scope.find('.ekit-video-item' + slug).fadeIn();
-			});
-
-			// Slick
-			if(carouselEl.length) {
-				config.prevArrow = '<button type="button" class="slick-prev"><i class="' + (config.prevArrow || 'icon icon-left-arrow2') + '"></i></button>';
-				config.nextArrow = '<button type="button" class="slick-next"><i class="' + (config.nextArrow || 'icon icon-right-arrow2') + '"></i></button>';
-				carouselEl.slick(config);
-			}
-
-			jQuery('.ekit-video-gallery.ekit-masonry').isotope({
-				percentPosition: true,
-				itemSelector: '.ekit-video-item ',
-			});
-		},
 		Unfold: function($scope){
 			var expand_btn = $scope.find('.ekit-unfold-btn'),
 				content_wrapper = $scope.find('.ekit-unfold-wrapper'),
