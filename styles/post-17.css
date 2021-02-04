@@ -4300,7 +4300,8 @@ body.rtl .elementor-17 .elementor-element.elementor-element-4a105983 {
         margin: 0;
     }
 
-    .elementor-section .elementor-inner-section .elementor-element .elementor-element-5f2b9d27 .elementor-section-boxed .elementor-section-height-default .elementor-section-height-default {
+    .elementor-section .elementor-inner-section .elementor-element .elementor-element-5f2b9d27 .elementor-section-boxed .elementor-section-height-default .elementor-section-height-default,
+    .elementor-widget-wrap>.elementor-element {
         width: auto;
     }
 }
