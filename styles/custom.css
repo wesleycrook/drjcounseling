@@ -6,6 +6,7 @@ a.footer-link {
   color: #fff !important;
   text-decoration: underline !important;
   cursor: pointer;
+  margin-left: 12px;
 }
 
 a.footer-link:hover {
